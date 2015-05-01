@@ -1,0 +1,19 @@
+#main {
+  position: relative;
+  height: calc(100vh - 70px);
+}
+
+.blokje {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
+  .snack {
+    background-image: url('/images/snack-house.svg');
+    background-size: contain;
+  }
+
+  .snake {
+    background-color: green;
+  }
