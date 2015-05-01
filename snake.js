@@ -9,6 +9,7 @@
   //
   var ticker;
   var ticks = 0;
+  var score = 0;
   var speed = 100; //ms between ticks
   var gridSize;
   var gridHeight;
@@ -22,9 +23,11 @@
   var startingNumberOfSnacks = 5;
 
   var $main = $('#main');
+  var $score = $('#score');
   var blokjeTemplate = '<div class="blokje snake"></div>';
   var snackTemplate = '<div class="blokje snack"></div>';
 
+  var dead = false;
 
   var snake = [];
   var snacks = [];
@@ -49,6 +52,8 @@
     snake.push(head);
     $main.append(snake[0].$element);
 
+    $score.html(score);
+
     updateSnakeElements();
 
     for(var j=0 ; j < startingNumberOfSnacks ; j++) {
@@ -64,7 +69,8 @@
 
     growSnake();
     calculateSnakeMovement(currentControlDirection);
-    updateSnakeElements();
+
+    if (!dead) updateSnakeElements();
   }
 
 
@@ -120,8 +126,25 @@
     snake[0].position = newHeadPosition;
   }
 
-  function checkDeath() {
+  function checkDeath(headPosition) {
+    var x = headPosition[0];
+    var y = headPosition[1];
+    if (x < 0 || y < 0 || x > gridWidth || y > gridHeight) {
+      die();
+    }
+    snake.forEach(function check(segment, index) {
+      if (segment.position[0] === headPosition[0] && segment.position[1] === headPosition[1]) {
+        die();
+      }
+    });
+  }
 
+  function die() {
+    dead = true;
+    clearInterval(ticker);
+    snake.forEach(function check(segment, index) {
+      segment.$element.css('background-color', 'red')
+    });
   }
 
   function updateSnakeElements() {
@@ -150,7 +173,7 @@
     var y = Math.round(Math.random() * (gridHeight -1));
     var found = [x,y];
 
-    snake.forEach(function checkSegment(segment, index) {
+    snake.forEach(function checkSegment(segment, index) { //TODO: use breakable jQuery loop
       if (segment.position[0] === x && segment.position[1] === y) {
         found = false;
       }
@@ -158,7 +181,6 @@
 
     if (!found) return found; // IKEA shortcut
 
-    //TODO: avoid existing snaaaaaaacks
     snacks.forEach(function cjackSnack(snack, index) {
       if (snack.position[0] === x && snack.position[1] === y) {
         found = false;
@@ -167,7 +189,6 @@
 
     return found;
   }
-
 
   function checkSnack(headPosition) {
     snacks.forEach(function check(snack, index) {
@@ -181,6 +202,8 @@
     snacks[index].$element.remove();
     snacks.splice(index, 1);
 
+    score++;
+    $score.html(score);
     growStack += snackSize;
     placeSnack();
   }
