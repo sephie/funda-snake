@@ -24,6 +24,7 @@ var fundaSnake = (function ($) {
 
   var $main = $('#main');
   var $score = $('#score');
+  var $intro =  $('div.intro');
   var blokjeTemplate = '<div class="blokje"></div>';
   var snackTemplate = '<div class="blokje snack"></div>';
 
@@ -133,7 +134,7 @@ var fundaSnake = (function ($) {
     if (x < 0 || y < 0 || x > gridWidth || y > gridHeight) {
       die();
     }
-    snake.forEach(function check(segment, index) {
+    snake.forEach(function check(segment) {
       if (segment.position[0] === headPosition[0] && segment.position[1] === headPosition[1]) {
         die();
       }
@@ -143,9 +144,14 @@ var fundaSnake = (function ($) {
   function die() {
     dead = true;
     clearInterval(ticker);
-    snake.forEach(function check(segment, index) {
+    snake.forEach(function check(segment) {
       segment.$element.css('background-color', 'red')
     });
+
+    setTimeout(function gameOverDelay() { //TODO temp
+      $intro.show();
+    }, 2000)
+
   }
 
   function updateSnakeElements(currentControlDirection) {
@@ -242,7 +248,7 @@ var fundaSnake = (function ($) {
     var y = Math.round(Math.random() * (gridHeight -1));
     var found = [x,y];
 
-    snake.forEach(function checkSegment(segment, index) { //TODO: use breakable jQuery loop
+    snake.forEach(function checkSegment(segment) { //TODO: use breakable jQuery loop
       if (segment.position[0] === x && segment.position[1] === y) {
         found = false;
       }
@@ -250,7 +256,7 @@ var fundaSnake = (function ($) {
 
     if (!found) return found; // IKEA shortcut
 
-    snacks.forEach(function cjackSnack(snack, index) {
+    snacks.forEach(function cjackSnack(snack) {
       if (snack.position[0] === x && snack.position[1] === y) {
         found = false;
       }
@@ -310,9 +316,9 @@ var fundaSnake = (function ($) {
     });
   }
 
+  $intro.click(function introClickHandler() {
+    $intro.hide();
+    startGame()
+  });
 
-
-  return {
-    startGame: startGame
-  }
 })(jQuery);
