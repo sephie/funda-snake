@@ -24,7 +24,7 @@
 
   var $main = $('#main');
   var $score = $('#score');
-  var blokjeTemplate = '<div class="blokje snake"></div>';
+  var blokjeTemplate = '<div class="blokje"></div>';
   var snackTemplate = '<div class="blokje snack"></div>';
 
   var dead = false;
@@ -32,10 +32,11 @@
   var snake = [];
   var snacks = [];
 
-  function SnakeSegment(element, position) {
+  function SnakeSegment(element, position, blokjeType) {
     this.position = position || [0, 0]; //[x, y], starting from the top left
     this.$element = element;
     this.$element.css({height: gridSize + 'px', width: gridSize + 'px'});
+    this.$element.addClass(blokjeType)
   }
 
   function startGame() {
@@ -48,9 +49,9 @@
     gridHeight = Math.floor($main.innerHeight() / gridSize);
     gridWidth = Math.floor($main.innerWidth() / gridSize);
 
-    head = new SnakeSegment($(blokjeTemplate), [4,4]);
+    head = new SnakeSegment($(blokjeTemplate), [4,4], 'head');
     snake.push(head);
-    $main.append(snake[0].$element);
+    $main.append(head.$element);
 
     $score.html(score);
 
@@ -70,7 +71,7 @@
     growSnake();
     calculateSnakeMovement(currentControlDirection);
 
-    if (!dead) updateSnakeElements();
+    if (!dead) updateSnakeElements(currentControlDirection);
   }
 
 
@@ -81,7 +82,7 @@
     }
 
     var lastSegment = snake[snake.length - 1];
-    var newSegment = new SnakeSegment($(blokjeTemplate), lastSegment.position);
+    var newSegment = new SnakeSegment($(blokjeTemplate), lastSegment.position, 'snake');
 
     snake.push(newSegment);
     $main.append(newSegment.$element);
@@ -147,9 +148,12 @@
     });
   }
 
-  function updateSnakeElements() {
+  function updateSnakeElements(currentControlDirection) {
     snake.forEach(function updateSegment(segment, index) {
-      segment.$element.css({left: segment.position[0] * gridSize, top: segment.position[1] * gridSize});
+      segment.$element.css({
+        left: segment.position[0] * gridSize,
+        top: segment.position[1] * gridSize
+      }).attr('direction', currentControlDirection);
     });
   }
 

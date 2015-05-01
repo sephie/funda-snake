@@ -13,7 +13,7 @@ body {
   font-family: 'Silkscreen', Proxima Nova, Helvetica Neue;
 }
 
-#header { 
+#header {
   font-weight: 300;
 }
 
@@ -21,24 +21,28 @@ body {
   background-image: url('/images/background.svg');
   background-size: 40px 40px;
   height: calc(100vh - 70px);
-  position: relative;  
+  position: relative;
 }
 
 .blokje {
-    height: 40px;
-    width: 40px;
     position: absolute;
 }
 
-  .snack {
-    background-image: url('/images/snack-house.svg');
+.snake {
+    background-color: green;
+}
+
+.head,
+.body,
+.tail,
+.snack{
     background-size: contain;
-  }
+}
 
   .snake {
     background-color: green;
   }
-  
+
 .scoreboard {
   text-align: center;
   padding: 30px;
@@ -46,16 +50,21 @@ body {
   z-index: 9999;
 }
 
-  .score {
-    	display: block;
-      font-size: 70px;
-      line-height: 100px;
-      color: #000000;
-  }
-  
-  .title {
-      display: block;
-    	font-size: 24px;
-      color: #666666;
-  }
-  
+.score {
+    display: block;
+  font-size: 70px;
+  line-height: 100px;
+  color: #000000;
+}
+
+.title {
+  display: block;
+    font-size: 24px;
+  color: #666666;
+}
+
+.snack {background-image: url('/images/snack-house.svg');}
+.head[direction=up] {background-image: url('/images/head-up.svg');}
+.head[direction=down] {background-image: url('/images/head-down.svg');}
+.head[direction=right] {background-image: url('/images/head-right.svg');}
+.head[direction=left] {background-image: url('/images/head-left.svg');}
