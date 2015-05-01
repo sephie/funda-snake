@@ -9,6 +9,18 @@
     font-style: normal;
 }
 
+@keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: .2 }
+  100% { opacity: 1 }
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: .2 }
+  100% { opacity: 1 }
+}
+
 body {
   font-family: 'Silkscreen', Proxima Nova, Helvetica Neue, sans-serif;
 }
@@ -23,6 +35,120 @@ body {
   height: calc(100vh - 70px);
   position: relative;
 }
+
+.intro {
+  background: #FFF url('/images/background.svg');
+  background-size: 40px 40px;
+  height: calc(100vh - 70px);
+  position: relative;
+  z-index: 9999;
+}
+
+  .intro .intro-header {
+    text-align: center;
+    padding: 90px 0 0 0;
+  }
+  
+    .intro .intro-header h1 {
+      font-size: 40px;
+      font-weight: 300;
+      color: #000;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .intro .intro-header .description {
+      font-size: 24px;
+      color: #666666;
+    }
+    
+  .intro .content {
+    text-align: center;
+  }
+  
+    .intro .content .snake-logo {
+      margin: 25px 0 50px;
+    }
+  
+    .intro .content .button {
+      display: block;
+      position: relative;
+      width: 185px;
+      background: #f8b000;
+      margin: auto;
+      padding: 12px 0;
+      color: #FFF;
+      transition: background 400ms ease;
+    }
+    
+      .intro .content .button:before {
+        background: url('/images/button-left.svg') no-repeat center right;
+        background-size: 40px 70px;
+        margin: -28px 0 0 -100px;
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 80px;
+        
+        animation-name: blink;
+        animation-direction: normal;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        
+        -webkit-animation-name: blink;
+        -webkit-animation-direction: normal;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      }
+      
+      .intro .content .button:after {
+        background: url('/images/button-right.svg') no-repeat center right;
+        background-size: 40px 70px;
+        margin: -28px 0 0 60px;
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 80px;
+        
+        animation-name: blink;
+        animation-direction: normal;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        
+        -webkit-animation-name: blink;
+        -webkit-animation-direction: normal;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      }
+    
+      .intro .content .button:focus,
+      .intro .content .button:hover {
+        background: #f9c033;
+        transition: background 400ms ease;
+      }
+      
+  .intro .foot {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+  }
+    
+    .intro .foot .button-small {
+      display: inline-block;
+      color: #666;
+      border-bottom: 1px solid #666;
+    }
+    
+      .intro .foot .button-small:focus,
+      .intro .foot .button-small:hover {
+        color: #000;
+        border-bottom: 1px dashed #000;
+      }
 
 .blokje {
     position: absolute;
@@ -51,7 +177,7 @@ body {
 }
 
 .score {
-    display: block;
+  display: block;
   font-size: 70px;
   line-height: 100px;
   color: #000000;
@@ -59,7 +185,7 @@ body {
 
 .title {
   display: block;
-    font-size: 24px;
+  font-size: 24px;
   color: #666666;
 }
 
