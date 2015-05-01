@@ -1,5 +1,5 @@
 ;
-(function ($) {
+var fundaSnake = (function ($) {
 
   /*
    funda 404 snake
@@ -245,5 +245,9 @@
     });
   }
 
-  window.onload = startGame();
+
+
+  return {
+    startGame: startGame
+  }
 })(jQuery);
