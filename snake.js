@@ -149,11 +149,76 @@ var fundaSnake = (function ($) {
   }
 
   function updateSnakeElements(currentControlDirection) {
+    var leaderPos, followerPos, segPos, someDirection;
+
+
     snake.forEach(function updateSegment(segment, index) {
+
+      segPos = segment.position;
+
+
+      if (index === 0 ){
+        //head stuff
+        someDirection = currentControlDirection;
+      } else if (index === (snake.length - 1)) {
+        //tail stuff
+        leaderPos = snake[index - 1].position;
+
+        snake[index - 1].$element.removeClass('tail');
+        segment.$element.addClass('tail');
+
+        if (segPos[0] === leaderPos[0]) {
+          //up-down
+          someDirection = segPos[1] < leaderPos[1] ? 'down' : 'up';
+        } else {
+          //left-right
+          someDirection = segPos[0] < leaderPos[0] ? 'right' : 'left';
+        }
+      } else {
+        //body stuff
+        leaderPos = snake[index - 1].position;
+        followerPos = snake[index + 1].position;
+
+        if (segPos[0] === leaderPos[0]) { //leader is above/below me
+          if (segPos[0] === followerPos[0]) { //follower also above/below
+            someDirection = 'vertical';
+          } else if (segPos[1] > leaderPos[1]) { //I'm below the leader, follower must be next to me
+            if (segPos[0] > followerPos[0]) {
+              someDirection = 'left-up'; //follower is to my left --> UP-LEFT
+            } else {
+              someDirection = 'right-up'; //follower is to my right --> UP-RIGHT
+            }
+          } else { //I'm above leader, follower must be next to me
+            if (segPos[0] > followerPos[0]) {
+              someDirection = 'left-down'; //follower is to my left --> DOWN-LEFT
+            } else {
+              someDirection = 'right-down'; //follower is to my right --> DOWN-RIGHT
+            }
+          }
+        } else {
+          // leader next to me
+          if (segPos[1] === followerPos[1]) { //follower also next to me
+            someDirection = 'horizontal';
+          } else if (segPos[0] > leaderPos[0]) { //leader to my left, follower must be above/below
+            if (segPos[1] > followerPos[1]) {
+              someDirection = 'left-up';
+            } else {
+              someDirection = 'left-down';
+            }
+          } else { //leader to my right, follower must be above/below
+            if (segPos[1] > followerPos[1]) {
+              someDirection = 'right-up';
+            } else {
+              someDirection = 'right-down';
+            }
+          }
+        }
+      }
+
       segment.$element.css({
         left: segment.position[0] * gridSize,
         top: segment.position[1] * gridSize
-      }).attr('direction', currentControlDirection);
+      }).attr('direction', someDirection);
     });
   }
 
