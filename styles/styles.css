@@ -9,14 +9,19 @@
     font-style: normal;
 }
 
-#header {
+body {
   font-family: 'Silkscreen', Proxima Nova, Helvetica Neue;
+}
+
+#header { 
   font-weight: 300;
 }
 
 #main {
-  position: relative;
+  background-image: url('/images/background.svg');
+  background-size: 40px 40px;
   height: calc(100vh - 70px);
+  position: relative;  
 }
 
 .blokje {
@@ -33,3 +38,24 @@
   .snake {
     background-color: green;
   }
+  
+.scoreboard {
+  text-align: center;
+  padding: 30px;
+  position: relative;
+  z-index: 9999;
+}
+
+  .score {
+    	display: block;
+      font-size: 70px;
+      line-height: 100px;
+      color: #000000;
+  }
+  
+  .title {
+      display: block;
+    	font-size: 24px;
+      color: #666666;
+  }
+  
