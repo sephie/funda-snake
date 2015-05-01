@@ -24,7 +24,8 @@ var fundaSnake = (function ($) {
 
   var $main = $('#main');
   var $score = $('#score');
-  var $intro =  $('div.intro');
+  var $intro =  $('div#intro');
+  var $gameOver = $('div#game-over');
   var blokjeTemplate = '<div class="blokje"></div>';
   var snackTemplate = '<div class="blokje snack"></div>';
 
@@ -48,6 +49,7 @@ var fundaSnake = (function ($) {
 
     gridSize = $main.innerWidth() / 48;
     gridHeight = Math.floor($main.innerHeight() / gridSize);
+    $main.css('height', gridHeight * gridSize);
     gridWidth = Math.floor($main.innerWidth() / gridSize);
 
     head = new SnakeSegment($(blokjeTemplate), [4,4], 'head');
@@ -56,11 +58,15 @@ var fundaSnake = (function ($) {
 
     $score.html(score);
 
+
     updateSnakeElements();
 
     for(var j=0 ; j < startingNumberOfSnacks ; j++) {
       placeSnack();
     }
+
+    $intro.hide();
+
     ticker = setInterval(tick, speed);
   }
 
@@ -131,7 +137,7 @@ var fundaSnake = (function ($) {
   function checkDeath(headPosition) {
     var x = headPosition[0];
     var y = headPosition[1];
-    if (x < 0 || y < 0 || x > gridWidth || y > gridHeight) {
+    if (x < 0 || y < 0 || x >= gridWidth || y >= gridHeight) {
       die();
     }
     snake.forEach(function check(segment) {
@@ -145,11 +151,11 @@ var fundaSnake = (function ($) {
     dead = true;
     clearInterval(ticker);
     snake.forEach(function check(segment) {
-      segment.$element.css('background-color', 'red')
+      segment.$element.css('background-color', '#ef4035')
     });
 
     setTimeout(function gameOverDelay() { //TODO temp
-      $intro.show();
+      $gameOver.show();
     }, 2000)
 
   }
@@ -308,17 +314,16 @@ var fundaSnake = (function ($) {
           }
           break;
         default:
-            console.log('-TB- STOP');
-            clearInterval(ticker);
+            //console.log('-TB- STOP');
+            //clearInterval(ticker);
           return; // exit this handler for other keys
       }
       event.preventDefault(); // prevent the default action (scroll / move caret)
     });
   }
 
-  $intro.click(function introClickHandler() {
-    $intro.hide();
-    startGame()
-  });
+  return {
+    start: startGame
+  }
 
 })(jQuery);

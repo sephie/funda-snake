@@ -29,7 +29,7 @@
 </header>
 
 <div id="main">
-    <div class="intro">
+    <div id="intro" class="intro">
         <header class="intro-header">
             <h1>404 - That's An Error</h1>    
             <p class="description">Enter The one-and-only funda snake</p>
@@ -37,7 +37,7 @@
         
         <div class="content">
             <img class="snake-logo" src="images/snake-badge.svg" width="250" height="250px" />
-            <a class="button" href="#">Start Game</a>
+            <a class="button" href="#" onclick="fundaSnake.start()">Start Game</a>
         </div>
         
         <div class="foot">
@@ -45,7 +45,7 @@
         </div>
     </div>
     
-    <div class="game-over intro">
+    <div id="game-over" class="intro" style="display: none">
         <header class="intro-header">
             <h1>Woosh - You're Dead</h1>    
             <p class="description">But You Can Start All Over</p>
@@ -53,7 +53,7 @@
         
         <div class="content">
             <img class="snake-logo" src="images/snake-badge-dead.svg" width="250" height="250px" />
-            <a class="button" href="#">Restart</a>
+            <a class="button" href="#" onclick="location.reload()">Restart</a>
         </div>
         
         <div class="foot">
@@ -67,71 +67,7 @@
     </div>
 </div>
 
-<!--<div id="foot-wrap">-->
 
-<!--<footer class="upper">-->
-<!--<div class="inner">-->
-<!--<a id="footer-brand" href="/">-->
-<!--<img src="http://static.beta.funda.localhost/images/funda-logo.svg" alt="funda"/>-->
-<!--</a>-->
-
-<!--<div class="footer-list-wrapper">-->
-<!--<h3>Social</h3>-->
-<!--<ul>-->
-<!--<li><a href="https://www.facebook.com/funda">Facebook</a></li>-->
-<!--<li><a href="https://www.pinterest.com/funda/">Pinterest</a></li>-->
-<!--<li><a href="https://www.linkedin.com/company/funda">Linkedin</a></li>-->
-<!--<li><a href="https://www.twitter.com/funda">Twitter</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-
-<!--<div class="footer-list-wrapper">-->
-<!--<h3>Informatie</h3>-->
-<!--<ul>-->
-<!--<li><a href="http://www.funda.nl/about/">Over funda</a></li>-->
-<!--<li><a href="http://www.funda.nl/contact/">Contact</a></li>-->
-<!--<li><a href="http://www.funda.nl/adverteren/">Adverteren</a></li>-->
-<!--<li><a href="http://www.funda.nl/vacatures/">Werken bij funda</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-
-<!--<div class="footer-list-wrapper">-->
-<!--<h3>Ondersteuning</h3>-->
-<!--<ul>-->
-<!--<li><a href="http://www.funda.nl/help/">Help</a></li>-->
-<!--<li><a href="http://www.funda.nl/gebruiksvoorwaarden/">Gebruiksvoorwaarden</a></li>-->
-<!--<li><a href="http://www.funda.nl/privacybeleid/">Privacybeleid</a></li>-->
-<!--<li><a href="http://www.funda.nl/cookiebeleid/">Cookiebeleid</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-
-<!--<div class="footer-list-wrapper">-->
-<!--<h3>Platform</h3>-->
-<!--<ul>-->
-<!--<li><a href="http://www.funda.nl/mobiel/">funda mobiel</a></li>-->
-<!--<li><a href="https://www.fundadesk.nl/">funda desk</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</footer>-->
-
-<!--<footer class="lower">-->
-<!--<div class="inner">-->
-<!--<div id="nvm">-->
-<!--<img src="http://static.beta.funda.localhost/images/nvm-logo.svg" alt="NVM"/>-->
-
-<!--<p>-->
-<!--<strong>funda is powered by NVM</strong><br>-->
-<!--Nederlandse Vereniging van Makelaars<br>-->
-<!--o.g. en vastgoeddeskundigen NVM-->
-<!--</p>-->
-
-<!--</div>-->
-
-<!--<span id="copyright">&copy; 2000 &ndash; 2015 Funda Real Estate B.V.</span>-->
-<!--</div>-->
-<!--</footer>-->
-<!--</div>-->
 
 
 <script src="snake.js"></script>
