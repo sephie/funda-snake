@@ -3,10 +3,10 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
 <g>
-	<path d="M15,6V5V4h-1V3h-1V2h-1h-1V1h-1H9H8H7H6v1H5H4v1H3H2H1H0v1v1v1v1v1v1v1v1v1v1h1h1h1h1v1h1h1v1h1h1h1h1h1v-1h1h1v-1h1v-1h1
-		v-1v-1h1V9V8V7V6H15z M14,7h-1V6h1V7z M7,3V2h1h1v1h1v1v1v1H9v1H8H7V6H6V5V4V3H7z M8,14H7v-1H6v-1v-1v-1h1V9h1h1v1h1v1v1v1H9v1H8z
-		 M13,10V9h1v1H13z"/>
-	<rect x="8" y="11" width="1" height="1"/>
-	<rect x="8" y="4" width="1" height="1"/>
+	<path fill="#104257" d="M15,6V5V4h-1V3h-1V2h-1h-1V1h-1H9H8H7H6v1H5H4v1H3H2H1H0v1v1v1v1v1v1v1v1v1v1h1h1h1h1v1h1h1v1h1h1h1h1h1v-1
+		h1h1v-1h1v-1h1v-1v-1h1V9V8V7V6H15z M14,7h-1V6h1V7z M7,3V2h1h1v1h1v1v1v1H9v1H8H7V6H6V5V4V3H7z M8,14H7v-1H6v-1v-1v-1h1V9h1h1v1h1
+		v1v1v1H9v1H8z M13,10V9h1v1H13z"/>
+	<rect x="8" y="11" fill="#104257" width="1" height="1"/>
+	<rect x="8" y="4" fill="#104257" width="1" height="1"/>
 </g>
 </svg>
