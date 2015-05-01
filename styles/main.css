@@ -1,0 +1,1896 @@
+/*
+\   Funda stylesheet - Redesign 2015
+/   Authors: tombestebreurtje@funda.nl, yournamehere@funda.too
+\
+/   This is the main SCSS file that contains all styles.
+\
+ \
+*/
+/*
+\   Variables
+ \
+*/
+/*
+\   Mixins & inheritables
+ \
+*/
+/* line 11, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_mixins.scss */
+div.inner {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 60px; }
+
+/* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_mixins.scss */
+div.inner-search {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 0; }
+
+/* line 25, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_mixins.scss */
+div.inner:before, div.inner-search:before, footer.upper:before, #main section:before, #primaire-kenmerken ul:before, #contact .contact-top:before, #contact .contact-bottom:before, #filters:before, ul.page-numbers:before, .filter:before, div.inner:after, div.inner-search:after, footer.upper:after, #main section:after, #primaire-kenmerken ul:after, #contact .contact-top:after, #contact .contact-bottom:after, #filters:after, ul.page-numbers:after, .filter:after {
+  content: " ";
+  display: table; }
+/* line 29, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_mixins.scss */
+div.inner:after, div.inner-search:after, footer.upper:after, #main section:after, #primaire-kenmerken ul:after, #contact .contact-top:after, #contact .contact-bottom:after, #filters:after, ul.page-numbers:after, .filter:after {
+  clear: both; }
+
+/*
+\   Funda Web Fonts
+ \
+*/
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/proxima-nova-light-funda.eot');
+  src: local('Proxima Nova Light'), local('ProximaNova-Light'), url('../fonts/proxima-nova-light-funda.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova-light-funda.woff2') format('woff2'), url('../fonts/proxima-nova-light-funda.woff') format('woff'), url('../fonts/proxima-nova-light-funda.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 300;
+  src: url('../fonts/proxima-nova-light-italic-funda.eot');
+  src: local('Proxima Nova Light Italic'), local('ProximaNovaLight-Italic'), url('../fonts/proxima-nova-light-italic-funda.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova-light-italic-funda.woff2') format('woff2'), url('../fonts/proxima-nova-light-italic-funda.woff') format('woff'), url('../fonts/proxima-nova-light-italic-funda.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/proxima-nova-regular-funda.eot');
+  src: local('Proxima Nova'), local('ProximaNova'), url('../fonts/proxima-nova-regular-funda.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova-regular-funda.woff2') format('woff2'), url('../fonts/proxima-nova-regular-funda.woff') format('woff'), url('../fonts/proxima-nova-regular-funda.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/proxima-nova-italic-funda.eot');
+  src: local('Proxima Nova Italic'), local('ProximaNova-Italic'), url('../fonts/proxima-nova-italic-funda.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova-italic-funda.woff2') format('woff2'), url('../fonts/proxima-nova-italic-funda.woff') format('woff'), url('../fonts/proxima-nova-italic-funda.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/proxima-nova-semibold-funda.eot');
+  src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold'), url('../fonts/proxima-nova-semibold-funda.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova-semibold-funda.woff2') format('woff2'), url('../fonts/proxima-nova-semibold-funda.woff') format('woff'), url('../fonts/proxima-nova-semibold-funda.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/proxima-nova-bold-funda.eot');
+  src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold'), url('../fonts/proxima-nova-bold-funda.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova-bold-funda.woff2') format('woff2'), url('../fonts/proxima-nova-bold-funda.woff') format('woff'), url('../fonts/proxima-nova-bold-funda.ttf') format('truetype'); }
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 19, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 45, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 57, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 78, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 98, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 109, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 126, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 135, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 144, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 153, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 169, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* line 173, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 184, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 192, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 203, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 211, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 232, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 256, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 278, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 293, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 303, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 312, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 335, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 347, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 357, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 371, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 379, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 390, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 399, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 408, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 419, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 425, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_normalize.scss */
+td, th {
+  padding: 0; }
+
+/*
+\   Scaffold
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_scaffold.scss */
+html {
+  position: relative;
+  min-height: 100%; }
+
+/* line 12, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_scaffold.scss */
+body {
+  overflow: hidden;
+  font: 400 15px/24px 'Proxima Nova', 'Open Sans', Arial, sans-serif;
+  color: #104257;
+  background-color: #fff; }
+
+/* line 21, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_scaffold.scss */
+strong {
+  font-weight: 600; }
+
+/* line 27, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_scaffold.scss */
+a {
+  color: #104257;
+  text-decoration: none; }
+
+/* line 32, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_scaffold.scss */
+a:hover {
+  color: #3888c5;
+  cursor: pointer; }
+
+/* line 40, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_scaffold.scss */
+h1, h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-top: 1.33em; }
+
+/*
+\   Header / Main navigation
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+body > header {
+  color: #fff;
+  font-weight: 600;
+  background-color: #f8b000;
+  height: 60px;
+  border-bottom: 10px solid #84d0f0;
+  font-size: 16px; }
+  /* line 16, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+  body > header a, body > header a:hover, body > header a:focus {
+    color: #fff;
+    text-decoration: none; }
+  /* line 23, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+  body > header .inner #brand {
+    display: block;
+    float: left;
+    margin: 11px 20px 0 0; }
+    /* line 28, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+    body > header .inner #brand img {
+      height: 38px;
+      width: 110px;
+      display: block; }
+  /* line 36, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+  body > header .inner .links {
+    list-style: none;
+    margin: 0; }
+    /* line 40, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+    body > header .inner .links li {
+      display: block;
+      float: left; }
+      /* line 44, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+      body > header .inner .links li a {
+        display: block;
+        line-height: 20px;
+        padding: 20px 15px; }
+        /* line 49, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+        body > header .inner .links li a:hover {
+          background-color: #f9c033; }
+  /* line 56, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+  body > header .inner .username {
+    float: right;
+    line-height: 20px;
+    padding: 20px 35px 20px 0; }
+    /* line 63, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_header.scss */
+    body > header .inner .username:after {
+      position: absolute;
+      content: "8";
+      background: red;
+      border-radius: 20px;
+      margin: -2px 0 0 8px;
+      padding: 2px 0;
+      position: absolute;
+      text-align: center;
+      width: 25px; }
+
+/*
+\   Main wrapper
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_content.scss */
+#main {
+  position: relative;
+  height: calc(100vh - 70px); }
+
+/* line 12, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_content.scss */
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+/*
+\   Footer & NVM tag line
+ \
+*/
+/* line 9, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+#foot-wrap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 360px; }
+
+/* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+footer.upper {
+  color: #fff;
+  background-color: #f8b000; }
+  /* line 25, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+  footer.upper a, footer.upper a:focus {
+    color: #fff;
+    text-decoration: none; }
+    /* line 29, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+    footer.upper a:hover, footer.upper a:focus:hover {
+      text-decoration: underline; }
+  /* line 34, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+  footer.upper .inner {
+    position: relative;
+    padding-top: 42px;
+    padding-bottom: 50px; }
+    /* line 39, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+    footer.upper .inner #footer-brand {
+      display: block;
+      float: left;
+      margin: 2px 60px 0 0; }
+      /* line 44, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+      footer.upper .inner #footer-brand img {
+        height: 38px;
+        display: block;
+        width: 110px; }
+    /* line 52, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+    footer.upper .inner .footer-list-wrapper {
+      float: left;
+      padding-left: 10px;
+      min-width: 190px; }
+      /* line 57, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+      footer.upper .inner .footer-list-wrapper:last-of-type {
+        min-width: 0; }
+      /* line 61, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+      footer.upper .inner .footer-list-wrapper h3 {
+        font-size: 15px;
+        font-weight: 600;
+        padding-left: 0; }
+      /* line 67, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+      footer.upper .inner .footer-list-wrapper ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0; }
+        /* line 72, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+        footer.upper .inner .footer-list-wrapper ul li {
+          line-height: 28px; }
+
+/* line 83, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+footer.lower {
+  font-size: small;
+  padding: 20px 0; }
+  /* line 87, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+  footer.lower #copyright {
+    float: left;
+    display: block; }
+  /* line 92, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+  footer.lower #nvm {
+    float: right; }
+    /* line 95, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+    footer.lower #nvm img {
+      float: right;
+      width: 44px;
+      height: 55px;
+      margin-right: 20px; }
+    /* line 102, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_footer.scss */
+    footer.lower #nvm p {
+      display: inline-block;
+      color: #006BB6;
+      text-align: right;
+      line-height: 19px;
+      margin: 0 15px; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?nhiokg');
+  src: url('../fonts/icomoon.eot?#iefixnhiokg') format('embedded-opentype'), url('../fonts/icomoon.woff?nhiokg') format('woff'), url('../fonts/icomoon.ttf?nhiokg') format('truetype'), url('../fonts/icomoon.svg?nhiokg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 12, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+i {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 26, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-check:before {
+  content: "\e608"; }
+
+/* line 30, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-video:before {
+  content: "\e605"; }
+
+/* line 34, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-plattegrond:before {
+  content: "\e607"; }
+
+/* line 38, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-360:before {
+  content: "\e606"; }
+
+/* line 42, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-images:before {
+  content: "\e604"; }
+
+/* line 46, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-woonoppervlakte:before {
+  content: "\e600"; }
+
+/* line 50, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-soortwoning:before {
+  content: "\e601"; }
+
+/* line 54, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-aantalkamers:before {
+  content: "\e602"; }
+
+/* line 58, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-funda-oppervlaktebuitenruimtes:before {
+  content: "\e603"; }
+
+/* line 62, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-heart:before {
+  content: "\f004"; }
+
+/* line 66, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-file-o:before {
+  content: "\f016"; }
+
+/* line 70, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-check-square-o:before {
+  content: "\f046"; }
+
+/* line 74, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-plus-circle:before {
+  content: "\f055"; }
+
+/* line 78, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-minus-circle:before {
+  content: "\f056"; }
+
+/* line 82, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-times-circle:before {
+  content: "\f057"; }
+
+/* line 86, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-check-circle:before {
+  content: "\f058"; }
+
+/* line 90, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-mail-forward:before {
+  content: "\f064"; }
+
+/* line 94, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-calendar:before {
+  content: "\f073"; }
+
+/* line 98, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-heart-o:before {
+  content: "\f08a"; }
+
+/* line 102, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-phone:before {
+  content: "\f095"; }
+
+/* line 106, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-square-o:before {
+  content: "\f096"; }
+
+/* line 110, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-square:before {
+  content: "\f0c8"; }
+
+/* line 114, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-envelope:before {
+  content: "\f0e0"; }
+
+/* line 118, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-angle-left:before {
+  content: "\f104"; }
+
+/* line 122, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-angle-right:before {
+  content: "\f105"; }
+
+/* line 126, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-angle-up:before {
+  content: "\f106"; }
+
+/* line 130, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-angle-down:before {
+  content: "\f107"; }
+
+/* line 134, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-mobile:before {
+  content: "\f10b"; }
+
+/* line 138, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-chevron-circle-left:before {
+  content: "\f137"; }
+
+/* line 142, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-chevron-circle-right:before {
+  content: "\f138"; }
+
+/* line 146, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-chevron-circle-up:before {
+  content: "\f139"; }
+
+/* line 150, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-chevron-circle-down:before {
+  content: "\f13a"; }
+
+/* line 154, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-check-square:before {
+  content: "\f14a"; }
+
+/* line 158, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/_icons.scss */
+.icon-file-pdf-o:before {
+  content: "\f1c1"; }
+
+/*
+\   Object details page
+ \
+*/
+/* line 13, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/object.scss */
+h1, h2, h3, h4, h5, h6 {
+  padding-left: 40px; }
+
+/*
+\   Object details - navigation
+ \
+*/
+/* line 11, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+html {
+  overflow-x: hidden; }
+
+/* line 16, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+#sticky-wrapper {
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: #e7f1f5;
+  overflow: hidden;
+  transition: box-shadow 400ms ease-out; }
+  /* line 24, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+  #sticky-wrapper.sticky {
+    position: fixed;
+    box-shadow: 0 0 2px #104257;
+    transition: box-shadow 400ms ease-out; }
+  /* line 30, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+  #sticky-wrapper .sticky-nav-back {
+    float: left;
+    display: table;
+    padding: 0 10px;
+    font-weight: 400; }
+    /* line 36, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+    #sticky-wrapper .sticky-nav-back i {
+      line-height: 50px;
+      font-size: 18px;
+      color: #3888c5; }
+    /* line 42, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+    #sticky-wrapper .sticky-nav-back span {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 5px; }
+  /* line 49, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+  #sticky-wrapper .sticky-nav {
+    float: right;
+    font-weight: 600; }
+    /* line 53, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+    #sticky-wrapper .sticky-nav ul {
+      list-style: none;
+      float: left;
+      padding: 0;
+      margin: 0; }
+      /* line 59, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+      #sticky-wrapper .sticky-nav ul li {
+        display: inline-block; }
+        /* line 62, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+        #sticky-wrapper .sticky-nav ul li a {
+          display: block;
+          padding: 0 20px 0;
+          line-height: 50px; }
+          /* line 67, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+          #sticky-wrapper .sticky-nav ul li a:focus, #sticky-wrapper .sticky-nav ul li a:hover {
+            color: #3888c5; }
+        /* line 72, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_nav.scss */
+        #sticky-wrapper .sticky-nav ul li:last-child a {
+          padding-right: 0; }
+
+/*
+\   Object details - Object header
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_header.scss */
+#object-header {
+  margin: 35px 0 25px; }
+  /* line 9, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_header.scss */
+  #object-header .address {
+    float: left;
+    width: 660px; }
+    /* line 13, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_header.scss */
+    #object-header .address h1 {
+      font-size: 35px;
+      line-height: 35px;
+      font-weight: 600;
+      margin: 0 0 5px; }
+    /* line 20, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_header.scss */
+    #object-header .address span {
+      font-weight: 600;
+      line-height: 30px;
+      padding-left: 40px; }
+  /* line 27, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_header.scss */
+  #object-header .price {
+    float: right;
+    width: 320px;
+    text-align: right; }
+    /* line 32, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_header.scss */
+    #object-header .price h2 {
+      font-size: 35px;
+      line-height: 35px;
+      font-weight: 500;
+      margin: 0; }
+
+/*
+\   Object details - media
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+#media {
+  margin: 0 0 50px; }
+  /* line 9, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+  #media div {
+    float: left;
+    overflow: hidden; }
+    /* line 13, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div:nth-child(n+2):nth-child(-n+4) {
+      margin-bottom: 20px; }
+    /* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div:nth-child(odd) {
+      margin-right: 20px; }
+    /* line 21, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div img {
+      height: 100%; }
+    /* line 25, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div.media-1 {
+      width: 660px;
+      height: 450px; }
+    /* line 30, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div.media-2 {
+      width: 320px;
+      height: 204px; }
+      /* line 34, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+      #media div.media-2 img {
+        width: 100%; }
+    /* line 41, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div.media-3 {
+      width: 150px;
+      height: 103px;
+      position: relative; }
+    /* line 47, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+    #media div .media-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: background 600ms ease-out;
+      top: 0; }
+      /* line 57, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+      #media div .media-overlay i {
+        font-size: 30px;
+        display: block;
+        margin: 24px 0 8px; }
+      /* line 63, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+      #media div .media-overlay:focus, #media div .media-overlay:hover {
+        background: rgba(0, 0, 0, 0.65);
+        transition: background 600ms ease-out; }
+      /* line 69, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+      #media div .media-overlay.video i {
+        font-size: 34px;
+        margin: 22px 0 6px;
+        display: block; }
+      /* line 77, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_media.scss */
+      #media div .media-overlay.graden i {
+        font-size: 34px;
+        margin: 22px 0 6px;
+        display: block; }
+
+/*
+\   Object - Primaire kenmerken, a.k.a. USPs, a.k.a. Top-kenmerken, a.k.a. Flexmerken
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_primaire-kenmerken.scss */
+#primaire-kenmerken {
+  float: left;
+  width: 660px; }
+  /* line 10, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_primaire-kenmerken.scss */
+  #primaire-kenmerken ul {
+    list-style: none;
+    margin: 0 40px 16px;
+    padding: 0; }
+  /* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_primaire-kenmerken.scss */
+  #primaire-kenmerken li {
+    display: table;
+    float: left;
+    width: 50%;
+    margin: 0; }
+    /* line 23, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_primaire-kenmerken.scss */
+    #primaire-kenmerken li i {
+      font-size: xx-large;
+      line-height: 44px;
+      margin-right: 10px; }
+    /* line 29, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_primaire-kenmerken.scss */
+    #primaire-kenmerken li span {
+      display: table-cell;
+      width: 100%;
+      vertical-align: middle; }
+    /* line 35, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_primaire-kenmerken.scss */
+    #primaire-kenmerken li:nth-child(odd) span {
+      padding-right: 10px; }
+
+/*
+\   Object details - description
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+#omschrijving {
+  float: left;
+  width: 660px; }
+  /* line 10, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+  #omschrijving div.description {
+    margin: 0 40px; }
+    /* line 13, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+    #omschrijving div.description span.description {
+      margin-right: 8px; }
+    /* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+    #omschrijving div.description .more-link {
+      display: none;
+      color: #3888c5;
+      font-weight: 600; }
+      /* line 22, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+      #omschrijving div.description .more-link:hover {
+        cursor: pointer; }
+        /* line 25, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+        #omschrijving div.description .more-link:hover i {
+          color: #3888c5; }
+      /* line 30, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_description.scss */
+      #omschrijving div.description .more-link i {
+        color: #104257;
+        font-size: 12px;
+        margin-right: 3px; }
+
+/*
+\   Object Detail - Sponsor blocks (below description)
+/   Implemented according to design, but the changing approach to sponsors/ads might
+\   affect the need for this file in this location.
+ \
+*/
+/* line 11, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_sponsors.scss */
+#sponsors {
+  float: left;
+  width: 660px;
+  margin-top: 40px; }
+  /* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_sponsors.scss */
+  #sponsors div.sponsor {
+    float: left;
+    width: 300px;
+    margin-left: 20px; }
+    /* line 22, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_sponsors.scss */
+    #sponsors div.sponsor:nth-child(2) {
+      margin-right: 20px; }
+    /* line 27, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_sponsors.scss */
+    #sponsors div.sponsor img {
+      display: block;
+      width: 100%; }
+
+/*
+\   Object details - Contact, a.k.a. "Blokje"
+ \
+*/
+/* line 17, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+#contact {
+  float: right;
+  width: 320px;
+  margin-left: 20px;
+  font-weight: 600; }
+  /* line 24, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+  #contact .contact-heading {
+    background: #84d0f0;
+    color: #fff;
+    line-height: 40px;
+    padding: 0 20px; }
+  /* line 32, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+  #contact .contact-top, #contact .contact-bottom {
+    background: #fff;
+    color: #104257;
+    padding: 20px;
+    line-height: 20px; }
+    /* line 40, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+    #contact .contact-top span, #contact .contact-top a, #contact .contact-bottom span, #contact .contact-bottom a {
+      display: block; }
+      /* line 47, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+      #contact .contact-top span i, #contact .contact-top a i, #contact .contact-bottom span i, #contact .contact-bottom a i {
+        display: inline-block;
+        width: 24px;
+        font-size: large; }
+  /* line 55, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+  #contact .contact-top {
+    background: #e7f1f5; }
+    /* line 58, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+    #contact .contact-top img {
+      float: left;
+      margin-right: 12px;
+      width: 28px;
+      height: 38px; }
+    /* line 65, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+    #contact .contact-top a {
+      margin-left: 40px; }
+  /* line 70, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+  #contact .contact-bottom {
+    border: 10px solid #e7f1f5;
+    padding: 10px;
+    border-top-width: 0; }
+    /* line 75, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+    #contact .contact-bottom .button {
+      display: table;
+      background: #f8b000;
+      color: #fff;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      line-height: 45px;
+      padding: 0 20px;
+      width: calc(100% - 20px*2);
+      transition: background 400ms ease-out; }
+      /* line 87, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+      #contact .contact-bottom .button span {
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+        padding-left: 24px; }
+        /* line 93, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+        #contact .contact-bottom .button span:before {
+          font-family: 'icomoon';
+          position: absolute;
+          content: '\f095';
+          width: 14px;
+          height: 19px;
+          margin: 0 0 0 -24px;
+          font-size: 16px; }
+      /* line 104, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+      #contact .contact-bottom .button i {
+        line-height: 45px;
+        display: none; }
+      /* line 109, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+      #contact .contact-bottom .button:focus, #contact .contact-bottom .button:hover {
+        background: #f9c033;
+        transition: background 400ms ease-out; }
+    /* line 115, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+    #contact .contact-bottom .button-small {
+      display: table;
+      padding: 8px 20px; }
+      /* line 119, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+      #contact .contact-bottom .button-small span {
+        display: table-cell;
+        vertical-align: middle; }
+      /* line 124, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+      #contact .contact-bottom .button-small i {
+        line-height: 20px;
+        font-size: 18px; }
+  /* line 131, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+  #contact .ad {
+    margin-top: 20px; }
+    /* line 134, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_contact.scss */
+    #contact .ad img {
+      display: block;
+      width: 100%; }
+
+/*
+\   Object details - Kenmerken
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+#kenmerken {
+  float: left;
+  width: 660px; }
+  /* line 10, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+  #kenmerken h2 {
+    margin: 55px 0 22px;
+    font-size: 30px; }
+  /* line 15, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+  #kenmerken table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 20px; }
+    /* line 21, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+    #kenmerken table thead th, #kenmerken table thead td {
+      font-weight: 600;
+      padding: 5px 5px 5px 40px;
+      line-height: 30px;
+      text-align: left; }
+      /* line 27, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+      #kenmerken table thead th a, #kenmerken table thead td a {
+        color: #3888c5; }
+    /* line 33, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+    #kenmerken table tbody th, #kenmerken table tbody td {
+      text-align: left;
+      vertical-align: top;
+      line-height: 30px;
+      padding: 5px 5px 5px;
+      border-bottom: 5px solid #fff; }
+      /* line 40, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+      #kenmerken table tbody th a, #kenmerken table tbody td a {
+        color: #3888c5; }
+    /* line 45, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+    #kenmerken table tbody th {
+      padding-left: 40px;
+      font-weight: 400; }
+      /* line 49, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+      #kenmerken table tbody th.sub {
+        padding-left: 60px; }
+    /* line 54, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+    #kenmerken table tbody td {
+      font-weight: 600; }
+    /* line 58, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_kenmerken.scss */
+    #kenmerken table tbody tr {
+      background-color: #e6f6fc; }
+
+/*
+\   Object Details - Map
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+#kaart {
+  float: left;
+  clear: both;
+  width: 100%; }
+  /* line 11, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+  #kaart h2 {
+    margin: 50px 0 37px;
+    font-size: 30px; }
+  /* line 18, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+  #kaart div.map {
+    position: relative;
+    height: 560px; }
+    /* line 23, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+    #kaart div.map noscript img {
+      width: 100%;
+      height: 100%; }
+    /* line 29, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+    #kaart div.map span.map-loading {
+      display: none; }
+
+/* line 37, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+html.m-js #kaart div.map {
+  background-image: url("../images/map-placeholder.jpg");
+  background-size: contain; }
+  /* line 41, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/object/_map.scss */
+  html.m-js #kaart div.map .map-loading {
+    display: block;
+    position: absolute;
+    color: #3888c5;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    bottom: 50%; }
+
+/*
+\   Search results page
+ \
+*/
+/* line 12, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+i {
+  font-size: large; }
+
+/* line 16, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+#search-sub {
+  height: 50px;
+  background-color: #e7f1f5; }
+  /* line 20, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+  #search-sub input {
+    float: left;
+    width: 300px;
+    margin: 7px 10px 7px 0;
+    border: 0; }
+    /* line 26, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+    #search-sub input:focus {
+      outline: none; }
+  /* line 31, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+  #search-sub .styled-select {
+    float: left;
+    width: 170px;
+    margin: 7px 10px 7px 0;
+    border: 0; }
+    /* line 37, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+    #search-sub .styled-select select {
+      background: #fff;
+      width: 170px; }
+  /* line 43, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+  #search-sub .location-search-box {
+    border-radius: 5px;
+    background-color: #fff;
+    height: 34px;
+    padding: 1px 5px 1px 19px;
+    width: 300px; }
+  /* line 51, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+  #search-sub .form-button {
+    transition: background 400ms ease-out;
+    background-color: #f8b000;
+    margin: 7px 10px 7px 0;
+    border-radius: 5px;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    color: #FFF;
+    height: 36px;
+    width: 100px; }
+    /* line 63, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+    #search-sub .form-button:focus, #search-sub .form-button:hover {
+      background: #f9c033;
+      transition: background 400ms ease-out; }
+
+/* line 71, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.suggest {
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+  border-color: #c7e1eb;
+  border-width: 0 2px 2px 2px;
+  border-style: solid;
+  top: 110px; }
+
+/* line 81, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.users-search {
+  padding: 20px;
+  border-bottom: solid 2px #f8b000;
+  margin-bottom: 32px; }
+
+/* line 90, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+#filters {
+  float: left;
+  width: 250px;
+  margin-right: 20px; }
+
+/* line 99, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.loading {
+  opacity: 0.2;
+  z-index: 3; }
+
+/* line 104, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.loading-spinner {
+  display: none;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 5; }
+
+/* line 112, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+#resultContainer {
+  float: left;
+  list-style: none;
+  width: 730px; }
+
+/* line 118, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.divider {
+  background-color: #e7f1f5;
+  margin: 20px 0 20px 0;
+  width: 100%;
+  height: 1px;
+  float: none;
+  display: block; }
+
+/* line 127, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.top-divider {
+  margin: 20px 0 5px 0; }
+
+/* line 131, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.top-divider-2 {
+  margin: 5px 0 25px 0; }
+
+/* line 135, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.number-of-results {
+  display: inline-block;
+  padding: 0;
+  margin: 0; }
+
+/* line 142, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.leaderboard {
+  width: 728px;
+  background-color: #e7f1f5;
+  height: 90px; }
+
+/* line 148, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/search.scss */
+.rectangle {
+  width: 300px;
+  background-color: #e7f1f5;
+  height: 250px; }
+
+/*
+\   Funda's styled cross-browser compatible <select>
+/
+\   Browsers: Chrome(win+osx), Firefox(win+osx), IE9-11, Safari
+ \
+*/
+/* line 13, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_dropdown.scss */
+.styled-select {
+  position: relative;
+  width: 220px;
+  overflow: hidden;
+  border: 2px solid #e7f1f5;
+  border-radius: 5px;
+  background-color: #fff; }
+  /* line 22, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_dropdown.scss */
+  .styled-select:after {
+    content: "\f13a";
+    font-family: "icomoon";
+    right: 9px;
+    top: 6px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    color: #84d0f0;
+    font-size: x-large; }
+  /* line 34, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_dropdown.scss */
+  .styled-select select {
+    width: 220px;
+    padding: 5px 5px 5px 20px;
+    margin: 0;
+    height: 36px;
+    background-color: #fff;
+    line-height: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    border: none; }
+    /* line 49, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_dropdown.scss */
+    .styled-select select:focus {
+      outline: none; }
+
+/* line 55, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_dropdown.scss */
+.styled-select.small {
+  width: 105px !important;
+  margin-right: 10px; }
+  /* line 59, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_dropdown.scss */
+  .styled-select.small select {
+    width: 133px !important; }
+
+/*
+\   Paging
+ \
+*/
+/* Container for paging */
+/* line 8, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+.paging {
+  float: right;
+  width: 730px;
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+/* line 15, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+.paging i {
+  font-size: small; }
+
+/* General ul style */
+/* line 21, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+ul.page-numbers {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center; }
+  /* line 28, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+  ul.page-numbers li {
+    margin-right: 10px;
+    display: inline-block; }
+    /* line 36, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+    ul.page-numbers li.previous-next-page:last-child {
+      margin-right: 0; }
+
+/* Individual li style */
+/* line 47, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+.page-number a {
+  padding: 4px 8px;
+  color: #104257;
+  font-weight: 600; }
+  /* line 52, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+  .page-number a:focus, .page-number a:hover {
+    background-color: #f9c033;
+    border-radius: 5px;
+    color: #fff; }
+
+/* Current page style */
+/* line 61, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+.current-page a {
+  background-color: #f8b000;
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 8px; }
+  /* line 67, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+  .current-page a:focus, .current-page a:hover {
+    background-color: #f9c033; }
+
+/* First and last page style when they are out of the current sequence of pages */
+/* line 75, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+.first-last-page a {
+  padding: 6px 8px;
+  color: #104257;
+  font-weight: bold; }
+  /* line 80, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+  .first-last-page a:focus, .first-last-page a:hover {
+    background-color: #f9c033;
+    border-radius: 5px;
+    color: #fff; }
+
+/*previous and next page*/
+/* line 92, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+.previous-next-page a {
+  padding: 6px 8px; }
+  /* line 95, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_paging.scss */
+  .previous-next-page a:focus, .previous-next-page a:hover {
+    color: #fff;
+    background-color: #f9c033;
+    border-radius: 5px;
+    margin-right: 0; }
+
+/*
+\   List item
+ \
+*/
+/*image
+  visual design image size.
+
+  width: 160px;
+  height: 126px;
+
+}
+
+*/
+/*Resultlist-item*/
+/* line 30, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object--result-list {
+  height: 144px;
+  width: 730px;
+  cursor: pointer; }
+  /* line 35, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object--result-list:hover {
+    background-color: #f2f4f8; }
+
+/* line 40, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__image--result-list {
+  width: 200px;
+  height: 144px;
+  margin-right: 16px;
+  float: left;
+  overflow: hidden; }
+
+/* line 48, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__image--result-list img {
+  height: 100%; }
+
+/* line 52, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text--result-list {
+  float: right;
+  width: 514px;
+  margin-top: 6px;
+  line-height: 22px; }
+
+/* line 59, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text__buurt {
+  display: block; }
+
+/* line 63, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text__prijs {
+  display: inline-block;
+  margin-top: 10px; }
+
+/* line 68, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text__kenmerken {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* line 74, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text__kenmerken li {
+  display: inline;
+  padding-right: 5px;
+  padding-left: 2px;
+  margin: 0; }
+
+/* line 81, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text--result-list__makelaar {
+  color: #0059a9;
+  margin-top: 12px;
+  display: block;
+  font-weight: 600; }
+  /* line 87, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object__text--result-list__makelaar:before {
+    width: 14px;
+    /*width of image*/
+    height: 22px;
+    /*height of image*/
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle; }
+  /* line 95, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object__text--result-list__makelaar.nvm:before {
+    content: url('../images/nvm-logo.svg'); }
+  /* line 99, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object__text--result-list__makelaar.vbo:before {
+    content: url('../images/vbo-logo.svg'); }
+  /* line 105, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object__text--result-list__makelaar.vgm:before {
+    content: url('../images/vgm-logo.svg'); }
+  /* line 109, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object__text--result-list__makelaar.vgp:before {
+    content: url('../images/vgp-logo.svg'); }
+  /* line 113, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .object__text--result-list__makelaar.lmv:before {
+    content: url('../images/vgp-logo.svg'); }
+
+/*Custom HTML Banner*/
+/* line 124, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object--html-banner {
+  height: 144px; }
+
+/* line 129, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__image--html-banner {
+  width: 200px;
+  height: 144px;
+  margin-right: 16px;
+  float: left;
+  overflow: hidden; }
+
+/* line 137, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__image--html-banner img {
+  height: 100%; }
+
+/* line 141, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text--html-banner {
+  float: left;
+  margin-top: 14.5px; }
+
+/* line 146, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text--html-banner__advertiser {
+  display: block;
+  margin-top: 15px; }
+
+/* line 156, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object--result-list--promolabel {
+  height: 194px; }
+
+/* line 160, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object--result-list--promolabel .object__text--result-list {
+  margin-top: 6px; }
+
+/* line 164, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__image-wrapper--promolabel {
+  float: left;
+  height: 194px; }
+
+/* line 169, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.promolabel-label {
+  height: 50px;
+  width: 200px;
+  clear: left;
+  color: #fff;
+  font-weight: 600;
+  line-height: 50px;
+  text-align: center; }
+  /* line 178, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .promolabel-label.promo-green {
+    background-color: #8dc63f; }
+  /* line 182, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .promolabel-label.promo-orange {
+    background-color: #f8b000; }
+  /* line 186, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+  .promolabel-label.promo-blue {
+    background-color: #84d0f0; }
+
+/* line 191, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_list-item.scss */
+.object__text__promolabel {
+  display: block;
+  width: 75%;
+  font-size: 0.9em;
+  margin-top: 6px;
+  height: 44px; }
+
+/*
+\   Active filters
+ \
+*/
+/* line 6, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+.active-filters {
+  padding: 0;
+  display: inline; }
+  /* line 10, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+  .active-filters .title {
+    display: inline-block;
+    border-left: 1px solid #9dd9f3;
+    padding: 0 0 0 7px;
+    margin: 0 0 0 5px; }
+
+/* line 18, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+.one-active-filter {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0 30px 0 0; }
+  /* line 23, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+  .one-active-filter:after {
+    content: "\f057";
+    font-family: "icomoon";
+    font-weight: normal;
+    position: absolute;
+    text-align: center;
+    width: 25px;
+    font-size: 18px;
+    color: #84d0f0;
+    margin-left: 2px; }
+  /* line 35, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+  .one-active-filter:visited {
+    text-decoration: none;
+    color: #104257;
+    font-weight: 600; }
+  /* line 41, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+  .one-active-filter:focus, .one-active-filter:hover {
+    text-decoration: line-through; }
+    /* line 44, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_active-filter.scss */
+    .one-active-filter:focus:after, .one-active-filter:hover:after {
+      color: #3888c5; }
+
+/*
+\   Filters
+ \
+*/
+/* line 12, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.filter {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px #e7f1f5 solid; }
+  /* line 18, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+  .filter.filters-heading {
+    padding-bottom: 0; }
+  /* line 26, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+  .filter .styled-select.small {
+    float: left;
+    clear: left;
+    margin-bottom: 10px; }
+    /* line 35, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+    .filter .styled-select.small + label {
+      float: left;
+      clear: right;
+      line-height: 32px; }
+
+/* line 43, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.subfilter {
+  margin-left: 40px; }
+
+/* line 46, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.inactive {
+  display: none; }
+
+/* line 54, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.filter-name {
+  padding: 0 0 0 20px;
+  margin: 0 0 1.33em; }
+
+/* line 62, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.form-element {
+  margin-bottom: 16px; }
+
+/* line 66, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.link-more-filters i {
+  color: #84d0f0; }
+
+/* line 70, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+a.link-ander-aanbod {
+  text-decoration: underline; }
+
+/* line 77, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.inputlabel {
+  cursor: pointer; }
+
+/* line 83, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.filter input[type="radio"] {
+  display: none; }
+
+/* line 87, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.filter input[type="checkbox"] {
+  display: none; }
+
+/* line 96, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+input[type="radio"] + .inputlabel .replacement-radio {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 6px 4px 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #84d0f0; }
+
+/* line 107, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+input[type="checkbox"] + .inputlabel .replacement-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 6px 4px 2px;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #84d0f0; }
+
+/* line 120, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+input[type="radio"]:checked + .inputlabel .replacement-radio {
+  background-color: #8dc63f; }
+
+/* line 124, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+input[type="checkbox"]:checked + .inputlabel .replacement-checkbox {
+  background-color: #8dc63f; }
+
+/* line 128, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+a.filterLink {
+  display: block;
+  margin-left: 20px;
+  line-height: 30px; }
+
+/* line 134, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.extraOptionsToggle {
+  display: block;
+  margin-left: 20px;
+  margin-top: 10px; }
+  /* line 139, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+  .extraOptionsToggle a {
+    display: table; }
+    /* line 142, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+    .extraOptionsToggle a i {
+      color: #84d0f0;
+      display: inline-block;
+      width: 18px;
+      margin: 0 6px 0 2px;
+      line-height: 26px; }
+    /* line 150, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+    .extraOptionsToggle a span {
+      display: table-cell;
+      vertical-align: middle; }
+
+/* line 157, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.replacement-radio {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 6px 4px 2px;
+  vertical-align: middle;
+  border-radius: 3px;
+  background-color: #84d0f0; }
+
+/* line 167, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.replacement-radio-checked {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 6px 4px 2px;
+  vertical-align: middle;
+  position: relative; }
+  /* line 175, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+  .replacement-radio-checked:before {
+    content: "\e608";
+    font-family: "icomoon";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    font-size: 15px;
+    line-height: 16px;
+    margin-left: 2px; }
+
+/* line 190, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_filters.scss */
+.close-panel {
+  font-weight: 400;
+  font-size: 0.92em; }
+
+/*
+\   Labels
+ \
+*/
+/* line 9, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+span.labels {
+  float: right; }
+
+/* line 13, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+span.label {
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 0 5px;
+  color: #fff;
+  font-weight: 600; }
+  /* line 20, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+  span.label:last-child {
+    margin-right: 0; }
+  /* line 24, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+  span.label.label-nieuw {
+    background-color: #3888c5; }
+  /* line 28, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+  span.label.label-gewijzigd {
+    background-color: #f9c033; }
+  /* line 32, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+  span.label.label-tophuis {
+    background-color: #39b54a; }
+  /* line 36, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+  span.label.label-verkocht {
+    background-color: #ef4035; }
+  /* line 40, /Users/tombestebreurtje/Development/funda.staticcompiler/src/scss/search/_labels.scss */
+  span.label.label-advertentie {
+    background-color: #898989; }
+
+/*# sourceMappingURL=main.css.map */

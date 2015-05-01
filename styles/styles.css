@@ -40,6 +40,7 @@ body {
 
 .intro {
   background: #FFF url('/images/background.svg');
+
   background-size: 40px 40px;
   height: calc(100vh - 70px);
   position: relative;

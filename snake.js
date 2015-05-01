@@ -7,10 +7,23 @@ var fundaSnake = (function ($) {
   */
 
   //
-  var ticker;
+
+  gameOverTexts = [
+      'Woosh - You\'re Dead',
+      '<blink>Insert Coin</blink>',
+      'Snake? SNAKE? SNAAAAAAKE!',
+      'Why did it have to be snakes?',
+      'you have been measured and been found wanting',
+      'All your base are belong to us',
+      'You have died of dysentery',
+      'And Here We Go'
+  ];
+
+
   var ticks = 0;
   var score = 0;
-  var speed = 100; //ms between ticks
+  var speed = 200; //ms between ticks
+  var speedIncrement = 50; //ms
   var gridSize;
   var gridHeight;
   var gridWidth;
@@ -67,7 +80,7 @@ var fundaSnake = (function ($) {
 
     $intro.hide();
 
-    ticker = setInterval(tick, speed);
+    tick();
   }
 
   function tick() {
@@ -78,7 +91,10 @@ var fundaSnake = (function ($) {
     growSnake();
     calculateSnakeMovement(currentControlDirection);
 
-    if (!dead) updateSnakeElements(currentControlDirection);
+    if (!dead) {
+      updateSnakeElements(currentControlDirection);
+      setTimeout(tick, (speed - Math.floor(score/5) * speedIncrement) || 25); //TODO: fix 0 bug
+    }
   }
 
 
@@ -149,25 +165,22 @@ var fundaSnake = (function ($) {
 
   function die() {
     dead = true;
-    clearInterval(ticker);
     snake.forEach(function check(segment) {
       segment.$element.css('background-color', '#ef4035')
     });
 
+    $gameOver.find('h1').text(gameOverTexts[Math.floor(Math.random() * gameOverTexts.length)]);
     setTimeout(function gameOverDelay() { //TODO temp
       $gameOver.show();
-    }, 2000)
+    }, 1000)
 
   }
 
   function updateSnakeElements(currentControlDirection) {
     var leaderPos, followerPos, segPos, someDirection;
 
-
     snake.forEach(function updateSegment(segment, index) {
-
       segPos = segment.position;
-
 
       if (index === 0 ){
         //head stuff
@@ -314,8 +327,6 @@ var fundaSnake = (function ($) {
           }
           break;
         default:
-            //console.log('-TB- STOP');
-            //clearInterval(ticker);
           return; // exit this handler for other keys
       }
       event.preventDefault(); // prevent the default action (scroll / move caret)
