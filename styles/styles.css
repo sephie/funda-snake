@@ -155,7 +155,7 @@ body {
 }
 
 .snake {
-    background-color: green;
+    /*background-color: green;*/
 }
 
 .head,
@@ -164,10 +164,6 @@ body {
 .snack{
     background-size: contain;
 }
-
-  .snake {
-    background-color: green;
-  }
 
 .scoreboard {
   text-align: center;
@@ -194,3 +190,16 @@ body {
 .head[direction=down] {background-image: url('/images/head-down.svg');}
 .head[direction=right] {background-image: url('/images/head-right.svg');}
 .head[direction=left] {background-image: url('/images/head-left.svg');}
+
+.snake[direction=horizontal] {background-image: url('/images/body-horizontal.svg');}
+.snake[direction=vertical] {background-image: url('/images/body-vertical.svg');}
+
+.snake[direction=left-up] {background-image: url('/images/body-left-up.svg');}
+.snake[direction=right-up] {background-image: url('/images/body-right-up.svg');}
+.snake[direction=left-down] {background-image: url('/images/body-left-down.svg');}
+.snake[direction=right-down] {background-image: url('/images/body-right-down.svg');}
+
+.tail[direction=up] {background-image: url('/images/tail-up.svg');}
+.tail[direction=down] {background-image: url('/images/tail-down.svg');}
+.tail[direction=right] {background-image: url('/images/tail-right.svg');}
+.tail[direction=left] {background-image: url('/images/tail-left.svg');}
