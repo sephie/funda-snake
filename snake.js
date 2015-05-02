@@ -22,8 +22,8 @@ var fundaSnake = (function ($) {
 
   var ticks = 0;
   var score = 0;
-  var speed = 200; //ms between ticks
-  var speedIncrement = 50; //ms
+  var GAME_SPEED = 200; //ms between ticks
+  var SPEED_INCREMENT = 50; //ms
   var gridSize;
   var gridHeight;
   var gridWidth;
@@ -32,20 +32,20 @@ var fundaSnake = (function ($) {
   var currentControlDirection = 'right';
 
   var growStack = 2; // initial growth
-  var snackSize = 4;
-  var startingNumberOfSnacks = 5;
+  var SNACK_SIZE = 4;
+  var INITIAL_SNACKS = 5;
 
   var $main = $('#main');
   var $score = $('#score');
   var $intro =  $('div#intro');
   var $gameOver = $('div#game-over');
+
   var blokjeTemplate = '<div class="blokje"></div>';
   var snackTemplate = '<div class="blokje snack"></div>';
 
-  var dead = false;
-
   var snake = [];
   var snacks = [];
+  var dead = false;
 
   function SnakeSegment(element, position, blokjeType) {
     this.position = position || [0, 0]; //[x, y], starting from the top left
@@ -57,7 +57,7 @@ var fundaSnake = (function ($) {
   function startGame() {
     var head;
 
-    console.log('-TB- Starting snake!');
+    console.log('Starting ssssnake!');
     addControlHandlers();
 
     gridSize = $main.innerWidth() / 48;
@@ -71,39 +71,33 @@ var fundaSnake = (function ($) {
 
     $score.html(score);
 
-
     updateSnakeElements();
 
-    for(var j=0 ; j < startingNumberOfSnacks ; j++) {
+    for(var j=0 ; j < INITIAL_SNACKS ; j++) {
       placeSnack();
     }
 
     $intro.hide();
-
     tick();
   }
 
   function tick() {
     ticks++;
 
+    if (growStack > 0) {
+      growSnake();
+    }
     currentControlDirection = nextControlDirection;
-
-    growSnake();
     calculateSnakeMovement(currentControlDirection);
 
     if (!dead) {
       updateSnakeElements(currentControlDirection);
-      setTimeout(tick, (speed - Math.floor(score/5) * speedIncrement) || 25); //TODO: fix 0 bug
+      setTimeout(tick, (GAME_SPEED - Math.floor(score/5) * SPEED_INCREMENT) || 25); //TODO: fix 0 bug
     }
   }
 
 
   function growSnake() {
-
-    if (growStack === 0) {
-      return;
-    }
-
     var lastSegment = snake[snake.length - 1];
     var newSegment = new SnakeSegment($(blokjeTemplate), lastSegment.position, 'snake');
 
@@ -298,7 +292,7 @@ var fundaSnake = (function ($) {
 
     score++;
     $score.html(score);
-    growStack += snackSize;
+    growStack += SNACK_SIZE;
     placeSnack();
   }
 
